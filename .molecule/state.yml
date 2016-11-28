@@ -1,0 +1,14 @@
+---
+converged: null
+created: true
+default_platform: null
+default_provider: null
+driver: docker
+hosts:
+  ansible-rkt-role-01:
+    groups:
+    - group1
+  ansible-rkt-role-02:
+    groups:
+    - group1
+multiple_platforms: null

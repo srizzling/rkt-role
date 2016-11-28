@@ -1,32 +1,37 @@
-Role Name
+rkt role
 =========
 
-A brief description of the role goes here.
+This is an ansible role for downloading the latest (or a specfic version) of the rkt binary from github and placing
+it in /usr/bin.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Requires the github3.py python module.
+
+This can be installed via pip.
+
+`pip install github3.py`
+
+The specfic module that requires this has been delegated to localhost, so ensure that the control machine (where ansible will run from) has this module installed.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+defaults/main.yml has one variable defined. 
 
-Dependencies
-------------
+`{{ rkt_version }}` specfies the version of the rkt binary to install. The default being latest. The format of the version if anything other than latest is `v1.20.0`
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+When using this role you are required to define the var `{{ github_login_token }}`. As this is an access token. It is advised to use [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html)
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
-
+         - { role: srizzling.ansible_rkt_role }
+      vars_files:
+         - secret.yml
 License
 -------
 

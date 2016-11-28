@@ -1,2 +1,4 @@
 ---
-# defaults file for .
+# defaults file for ansible-rkt-role
+
+rkt_version: latest

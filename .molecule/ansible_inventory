@@ -1,0 +1,6 @@
+ansible-rkt-role-01 ansible_connection=docker
+ansible-rkt-role-02 ansible_connection=docker
+
+[group1]
+ansible-rkt-role-01
+ansible-rkt-role-02
