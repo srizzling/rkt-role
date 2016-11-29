@@ -5,14 +5,14 @@ services:
 before_install:
 - sudo apt-get -qq update
 - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
-- openssl aes-256-cbc -k "$vault_file_pass" -in vault_pass_file.enc -out vault_pass_file -d
+- openssl aes-256-cbc -k "$vault_file_pass" -in vault_password_file.enc -out vault_password_file -d
 install:
 - pip install docker-py
 - pip install molecule
 script:
 - molecule test
 after_script:
-- shred vault_pass_file
+- shred vault_password_file
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
 env:
