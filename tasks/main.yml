@@ -13,7 +13,7 @@
     repo: "rkt"
     action: get_asset_url
     asset_regex: ".tar.gz$"
-    release_version: latest
+    release_version: "{{ rkt_version }}"
   register: rkt_release
   delegate_to: 127.0.0.1
 
