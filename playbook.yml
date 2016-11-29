@@ -1,6 +1,6 @@
 ---
 - hosts: all
   roles:
-    - role: ansible-rkt-role
+    - role: rkt-role
   vars_files:
     - vars/vault.yml
