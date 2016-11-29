@@ -1,10 +1,12 @@
 ---
+ansible:
+  vault_password_file: vault_password_file
+  sudo: False
 driver:
   name: docker
 
 docker:
   containers:
-
       - name: ansible-rkt-role-01
         image: ubuntu
         image_version: latest

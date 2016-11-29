@@ -2,3 +2,5 @@
 - hosts: all
   roles:
     - role: ansible-rkt-role
+  vars_files:
+    - vars/vault.yml
