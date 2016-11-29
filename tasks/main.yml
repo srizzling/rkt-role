@@ -2,8 +2,8 @@
 # unforuntely required to ensure that whatever unarchive uses for getting archive from github
 # works with openssl on default docker images :( sorry.
 - name: Ensure curl is installed
-  package: 
-    name: curl 
+  package:
+    name: curl
     state: installed
 
 - name: Find out latest download url of rkt from github
