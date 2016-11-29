@@ -143,13 +143,13 @@ def main():
     except github3.AuthenticationFailed:
         e = get_exception()
         module.fail_json(msg='Failed to connect to Github: %s' % e)
-    
+
     repository = gh.repository(str(user), str(repo))
 
     if not repository:
         module.fail_json(msg="Repository %s/%s doesn't exist" % (user, repo))
-    
-    
+
+
     if action == 'latest_release':
         release = repository.latest_release()
         if release:
@@ -174,7 +174,7 @@ def main():
             if len(assets_list) > 1:
                 module.fail_json(msg="Regex found too many assets [%s] assoicated with %s release, use a stricter regex" % (', '.join(assests_list), release.tag_name))
             elif (len(assets_list) == 0):
-                module.fail_json(tag=release.tag_name, msg="Regex found 0 matches for the following release %s" % (release.tag_name) )    
+                module.fail_json(tag=release.tag_name, msg="Regex found 0 matches for the following release %s" % (release.tag_name) )
             module.exit_json(changed=False, tag=release.tag_name, asset_url=assets_list[0].browser_download_url)
         else:
             module.exit_json(tag=None)
