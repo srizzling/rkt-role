@@ -1,6 +1,8 @@
 rkt role
 =========
 
+[![Build Status](https://travis-ci.org/srizzling/rkt-role.svg?branch=master)](https://travis-ci.org/srizzling/rkt-role)
+
 This is an ansible role for downloading the latest (or a specfic version) of the rkt binary from github and placing
 it in /usr/bin.
 
@@ -32,6 +34,7 @@ Example Playbook
          - { role: srizzling.ansible_rkt_role }
       vars_files:
          - secret.yml
+
 License
 -------
 
