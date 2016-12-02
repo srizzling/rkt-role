@@ -1,5 +1,5 @@
 ---
 # defaults file for ansible-rkt-role
 
-rkt_version: lates
+rkt_version: latest
 github_login_token: "{{ vault_github_login_token }}"
