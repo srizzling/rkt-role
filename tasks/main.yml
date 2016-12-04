@@ -5,7 +5,7 @@
   package:
     name: curl
     state: installed
-  becomes: true
+  become: true
 
 - name: Find out latest download url of rkt from github
   github_release:
