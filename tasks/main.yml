@@ -5,6 +5,7 @@
   package:
     name: curl
     state: installed
+  becomes: true
 
 - name: Find out latest download url of rkt from github
   github_release:
@@ -23,6 +24,7 @@
     remote_src: yes
     dest: /opt/
     creates: /opt/rkt-{{ rkt_release.tag }}
+  becomes: true
 
 - name: Copy binarys to path
   copy:
@@ -33,3 +35,4 @@
   with_items:
     - base: "rkt"
       version: "{{ rkt_release.tag }}"
+  becomes: true
