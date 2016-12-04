@@ -24,7 +24,7 @@
     remote_src: yes
     dest: /opt/
     creates: /opt/rkt-{{ rkt_release.tag }}
-  becomes: true
+  become: true
 
 - name: Copy binarys to path
   copy:
@@ -35,4 +35,4 @@
   with_items:
     - base: "rkt"
       version: "{{ rkt_release.tag }}"
-  becomes: true
+  become: true
