@@ -4,3 +4,5 @@ README.md export-ignore
 tests export-ignore
 vault_password_file.enc export-ignore
 vars/vault.yml export-ignore
+molecule.yml export-ignore
+playbook.yml export-ignore
